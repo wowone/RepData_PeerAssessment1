@@ -48,7 +48,9 @@ for(i in 1:nrow(data)){
 sum_per_day2 <- aggregate(data2$steps, by=list(data2$date), FUN=sum, na.rm=T)
 hist(sum_per_day2$x, main="Total steps per day", xlab="Total steps")
 ```
-Total NA lines: `r total_na`.
+
+Total NA lines: `r total_na`. 
+
 After the substitution, the distribution became "more normal". That is not surprising because we have changed the data in the most expected way for each missed value (we used the mean values for the corresponding intervals instead NA).
 
 ## Are there differences in activity patterns between weekdays and weekends?

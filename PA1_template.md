@@ -60,7 +60,9 @@ hist(sum_per_day2$x, main="Total steps per day", xlab="Total steps")
 ```
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
-Total NA lines: 2304.
+
+Total NA lines: 2304. 
+
 After the substitution, the distribution became "more normal". That is not surprising because we have changed the data in the most expected way for each missed value (we used the mean values for the corresponding intervals instead NA).
 
 ## Are there differences in activity patterns between weekdays and weekends?
