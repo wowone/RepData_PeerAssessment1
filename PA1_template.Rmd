@@ -54,10 +54,10 @@ After the substitution, the distribution became "more normal". That is not surpr
 ## Are there differences in activity patterns between weekdays and weekends?
 Adding the column to data2:
 ```{r results="hide"}
+Sys.setlocale("LC_TIME","en_US")
 x <- rep("weekday", nrow(data))
 x[which(weekdays(as.Date(data2$date)) %in% c("Saturday", "Sunday"))] = "weekend"
-x <- as.factor(x)
-data2 <- cbind(data2, x)
+data2 <- cbind(data2, as.factor(x))
 colnames(data2)[4] <- "weekend"
 ```
 
@@ -68,9 +68,7 @@ colnames(mean_per_interval) <- c("interval", "weekend", "steps")
 ```
 
 Plotting the results.
-```{r}
+```{r asdf, results="asis"}
 library(lattice)
-with(mean_per_interval,
-    xyplot(steps ~ interval | weekend, type="l", layout=c(1,2))
-)
+xyplot(steps ~ interval | weekend, data=mean_per_interval, type="l", layout=c(1,2))
 ```
